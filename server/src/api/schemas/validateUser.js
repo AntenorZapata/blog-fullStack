@@ -16,6 +16,16 @@ const validateUserData = async (body) => {
   }
 };
 
+const validateLoginData = async (body) => {
+  const { error } = Joi.object({
+    email: Joi.string().email().required(),
+    password: Joi.string().min(6).required(),
+  }).validate(body);
+  if (error) {
+    throw new ApiError(error.details[0].message, 400);
+  }
+};
+
 const userExists = async (email) => {
   const user = await User.findAll({ where: { email } });
   return !!user.length;
@@ -24,4 +34,5 @@ const userExists = async (email) => {
 module.exports = {
   validateUserData,
   userExists,
+  validateLoginData,
 };

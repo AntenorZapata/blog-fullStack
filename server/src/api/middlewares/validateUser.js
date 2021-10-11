@@ -3,7 +3,7 @@ const { ApiError } = require('../utils/ApiError');
 const {
   userValidate,
   loginValidate,
-  tokenValidate,
+  // tokenValidate,
 } = require('../schemas/validations');
 const { User } = require('../../models');
 const { tokenGenerator } = require('../utils/createToken');
@@ -29,8 +29,32 @@ const validateUser = async (req, res, next) => {
   return sendToken(req, next);
 };
 
-const checkJwt = async (next, req, res) => {
+// const checkJwt = async (next, req, res) => {
+//   const { authorization } = req.headers;
+
+//   try {
+//     const decoded = jwt.verify(authorization, secret);
+//     const { email } = decoded;
+
+//     const user = await checkIfUserExist(email);
+
+//     if (!user) {
+//       return next(new ApiError('User does not exsit', 404));
+//     }
+
+//     req.user = user;
+//     next();
+//   } catch (err) {
+//     return res.status(401).json({ message: err.message });
+//   }
+// };
+
+const verifyToken = async (req, res, next) => {
   const { authorization } = req.headers;
+
+  if (!authorization) {
+    return next(new ApiError('Token not found', 401));
+  }
 
   try {
     const decoded = jwt.verify(authorization, secret);
@@ -39,27 +63,14 @@ const checkJwt = async (next, req, res) => {
     const user = await checkIfUserExist(email);
 
     if (!user) {
-      return next(new ApiError('User does not exsit', 404));
+      return next(new ApiError('Expired or invalid token', 404));
     }
 
     req.user = user;
     next();
   } catch (err) {
-    return res.status(401).json({ message: err.message });
+    return res.status(401).json({ message: 'Expired or invalid token' });
   }
-};
-
-const verifyToken = async (req, res, next) => {
-  const { authorization } = req.headers;
-  if (!authorization) {
-    return next(new ApiError('Token not found', 401));
-  }
-
-  if (!tokenValidate(authorization)) {
-    return next(new ApiError('Expired or invalid token', 401));
-  }
-
-  return checkJwt(next, req, res);
 };
 
 const validateLogin = async (req, res, next) => {
