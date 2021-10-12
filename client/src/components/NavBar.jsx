@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FaPooStorm, FaTimes, FaBars } from 'react-icons/fa';
+import { SiAudiotechnica } from 'react-icons/si';
 import { Container } from '../globalStyles';
 import { Link } from 'react-router-dom';
 
@@ -15,8 +16,7 @@ function NavBar() {
       <Nav>
         <NavbarContainer>
           <NavLogo to='/'>
-            <FaPooStorm />
-            Storm
+            <SiAudiotechnica /> TechToday
           </NavLogo>
           <MobileIcon onClick={handleShowNav}>
             {click ? <FaTimes /> : <FaBars />}
@@ -24,9 +24,6 @@ function NavBar() {
           <NavMenu onClick={handleShowNav} click={click}>
             <NavItem>
               <NavLinks to='/'>Home</NavLinks>
-            </NavItem>
-            <NavItem>
-              <NavLinks to='/about'>About</NavLinks>
             </NavItem>
             <NavItem>
               <NavLinks to='/blog'>Blog</NavLinks>

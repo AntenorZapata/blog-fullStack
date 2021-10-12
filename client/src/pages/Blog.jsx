@@ -12,7 +12,7 @@ function Blog() {
           {BlogData.map((blogDetail, index) => {
             return (
               <Card>
-                <CardLink to=''>
+                <CardLink to={`/blog/${blogDetail.id}`}>
                   <CardImage src={blogDetail.image} />
                 </CardLink>
                 <CardDate>{blogDetail.date}</CardDate>
