@@ -12,7 +12,7 @@
 
 O projeto possui as seguintes tecnologias:
 
-Backend: 100% : ✅
+Backend: 100% ✅
 - Node.js
 - Express
 - MySQL/Sequelize
