@@ -23,4 +23,4 @@ app.use('/post', postRouter);
 
 app.use(error);
 
-app.listen(3000, () => console.log('ouvindo porta 3000!'));
+app.listen(3001, () => console.log('ouvindo porta 3001!'));
