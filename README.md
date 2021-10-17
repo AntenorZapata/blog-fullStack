@@ -1,10 +1,4 @@
 
-<p align="center">
-<img src="https://media3.giphy.com/media/SMjDFkq5mGxhLdsBOK/giphy.gif" width="200" height="200"/>
-</p>
-
-
-
 <h2 align="center">Blog FullStack</h1>
 
 ---
