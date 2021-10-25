@@ -4,7 +4,7 @@
 ---
 ### 💡 Meus comentários
 
-Neste projeto pude exercitar, dentre outros tópicos, o desenvolvimento de um CRUD com ORM, o uso de models do Sequelize para a criação e associação de tabelas, autenticação JWT e validações com Joi.
+Neste projeto pude exercitar, dentre outros tópicos, o desenvolvimento de um CRUD com ORM, princípios SOLID, o uso de models do Sequelize para a criação e associação de tabelas, autenticação JWT e validações com Joi.
 
 
 ### 🚀Tecnologias
