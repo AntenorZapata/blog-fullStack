@@ -1,13 +1,12 @@
 
-<p align="center">
-<img src="https://media3.giphy.com/media/SMjDFkq5mGxhLdsBOK/giphy.gif" width="200" height="200"/>
-</p>
-
-
-
 <h2 align="center">Blog FullStack</h1>
 
 ---
+### 💡 Meus comentários
+
+Neste projeto pude exercitar, dentre outros tópicos, o desenvolvimento de um CRUD com ORM, princípios SOLID, o uso de models do Sequelize para a criação e associação de tabelas, autenticação JWT e validações com Joi.
+
+
 ### 🚀Tecnologias
 
 O projeto possui as seguintes tecnologias:
@@ -33,10 +32,6 @@ Lista de Requisitos do Backend:
     - 11 - Sua aplicação deve ter o endpoint DELETE `post/:id`
     - 12 - Sua aplicação deve ter o endpoint DELETE `/user/me`
     - 13 - Sua aplicação deve ter o endpoint GET `post/search?q=:searchTerm`
-
-
-Neste projeto pude exercitar, dentre outros tópicos, o desenvolvimento de um CRUD com ORM, o uso de models do Sequelize para a criação e associação de tabelas, autenticação JWT e validações com Joi.
-
 
 
 
